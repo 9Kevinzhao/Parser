@@ -1,3 +1,5 @@
+const FileReader = require('./FileReader.js');
+
 function electionParser(array){
     this.state=array[0];
     this.county=array[1];
@@ -7,5 +9,5 @@ function electionParser(array){
     this.clinton=array[6];
     this.pclinton=array[7];
 
-    
+
 }

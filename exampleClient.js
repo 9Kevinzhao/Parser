@@ -12,6 +12,7 @@ console.log("----------");
 let list = FR.LoadFileIntoArrayByLine('electionSimplified.txt');
 
 
+
 console.log(list[0]);
 console.log(list[500]);
 console.log(list[1000]);
@@ -23,4 +24,4 @@ console.log(list[2000]);
 // sort counties within a given state from least to greatest total votes
 // name counties a candidate won in a state and show percent.
 // which state had the county with the largest % difference
-// which state had the county with the largest literal vote difference 
+// which state had the county with the largest literal vote difference

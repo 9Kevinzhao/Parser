@@ -28,6 +28,17 @@ const FileReader = function(){
             return undefined;
         }
 
+    function listintoarray(list){
+        let beforeobama=list.indexOf(,\")
+        let afterobama=list.indexOf(\",)
+        let beforeromney=list.lastIndexOf(,\")
+        let afterromney=list.lastindexOf(",)
+        let temp1=list.substring(beforeobama,afterobama)
+        let temp2=
+
+        }
+    }
+
     }
     return{loadFileIntoString,LoadFileIntoArrayByLine}
 };
