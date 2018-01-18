@@ -10,7 +10,10 @@ console.log(rawdata.split("\r\n"));
 console.log("----------");
 
 let list = FR.LoadFileIntoArrayByLine('electionSimplified.txt');
-
+let newlist=[]
+for(let i=0;i<list.length;i++){
+    newlist[i]=FR.listintoarray(list[i])
+}
 
 
 console.log(list[0]);
