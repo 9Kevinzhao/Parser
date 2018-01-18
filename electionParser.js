@@ -8,9 +8,11 @@ function electionParser(array){
     this.pobama=array[5];
     this.romney=array[6];
     this.promney=array[7];
-    for(let i=0;i<list.length;i++){
-        newlist[i]=list[i].split(",")
-    }
+
+}
+function Parser(line){
+    let array = line.split("\,");
+    return array;
 }
 
 

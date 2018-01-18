@@ -10,9 +10,17 @@ console.log(rawdata.split("\r\n"));
 console.log("----------");
 
 let list = FR.LoadFileIntoArrayByLine('electionSimplified.txt');
-let newlist=[]
-for(let i=0;i<list.length;i++){
-    newlist[i]=FR.listintoarray(list[i])
+function sortbyfips(list){
+
+    list.sort(a,b){return a.fips-b.fips}
+}
+function percentdifference(p){
+    temp=[]
+    for(i=0;i<list.length;i++){
+        if(list[i].pobama-list[i].promney>p){
+            temp.push(list[i])
+        }
+    }
 }
 
 
