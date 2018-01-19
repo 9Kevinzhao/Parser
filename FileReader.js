@@ -28,7 +28,7 @@ const FileReader = function(){
             return undefined;
         }
 }
-    
+
 
     }
 
