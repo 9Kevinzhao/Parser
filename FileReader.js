@@ -28,11 +28,6 @@ const FileReader = function(){
             return undefined;
         }
 }
-
-
-    }
-
-
-    return{loadFileIntoString,LoadFileIntoArrayByLine,listintoarray}
+    return{loadFileIntoString,LoadFileIntoArrayByLine}
 };
 module.exports = FileReader;

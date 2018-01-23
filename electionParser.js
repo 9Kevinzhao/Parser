@@ -15,7 +15,7 @@ const electionParser = function(){
         return array;
     }
     function all(list){
-        for(){
+        for(var x=0;x<list.length;x++){
             list[x] = electionItem(Parser(list[x]));
         }
         return list;
