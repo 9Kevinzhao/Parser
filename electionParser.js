@@ -10,13 +10,14 @@ const electionParser = function(){
         this.promney=array[7];
 
     }
+
     function Parser(line){
         let array = line.split(",");
         return array;
     }
     function all(list){
         for(var x=0;x<list.length;x++){
-            list[x] = electionItem(Parser(list[x]));
+            list[x] = new electionItem(Parser(list[x]));
         }
         return list;
     }

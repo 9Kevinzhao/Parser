@@ -1,5 +1,6 @@
-function test(){
-let array="abcdefg"
-console.log(array.indexOf("bc"))
+function Parser(line){
+    let array = line.split(",");
+    return array;
 }
-test()
+let line=["a","b","c"]
+console.log(Parser(line));

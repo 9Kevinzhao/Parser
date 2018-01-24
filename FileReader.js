@@ -25,9 +25,12 @@ const FileReader = function(){
         }
         else{
             console.log("Something is strange about this input file");
-            return undefined;
+            return "unddefined";
         }
 }
     return{loadFileIntoString,LoadFileIntoArrayByLine}
 };
 module.exports = FileReader;
+let FR = new FileReader();
+let list = FR.LoadFileIntoArrayByLine('electionSimplified.csv');
+console.log(list);

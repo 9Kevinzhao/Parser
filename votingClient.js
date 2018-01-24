@@ -5,8 +5,8 @@ const electionParser = require('./electionParser.js');
 let FR = new FileReader();
 let Parser = new electionParser();
 
-let list = FR.LoadFileIntoArrayByLine('electionSimplified.csv');
-let parsedList = Parser.all(list);
+let list = Parser.all(FR.LoadFileIntoArrayByLine('electionSimplified.csv'));
+console.log(list.pobama);
 
 
 
@@ -102,7 +102,7 @@ function findStatesWithExact(number){
 }
 }
 
-console.log(list);
+
 
 
 // find states with at least/at most/exactly "number" counties
