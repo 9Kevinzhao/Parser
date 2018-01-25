@@ -3,11 +3,11 @@ const electionParser = function(){
     function electionItem(array){
         this.state=array[0];
         this.county=array[1];
-        this.fips=array[3];
-        this.obama=array[4];
-        this.pobama=array[5];
-        this.romney=array[6];
-        this.promney=array[7];
+        this.fips=array[2];
+        this.obama=array[3];
+        this.pobama=array[4];
+        this.romney=array[5];
+        this.promney=array[6];
 
     }
 
@@ -23,6 +23,5 @@ const electionParser = function(){
     }
     return {all};
 };
-
 
 module.exports = electionParser;

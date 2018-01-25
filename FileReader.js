@@ -31,6 +31,3 @@ const FileReader = function(){
     return{loadFileIntoString,LoadFileIntoArrayByLine}
 };
 module.exports = FileReader;
-let FR = new FileReader();
-let list = FR.LoadFileIntoArrayByLine('electionSimplified.csv');
-console.log(list);

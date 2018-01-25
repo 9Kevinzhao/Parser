@@ -6,7 +6,6 @@ let FR = new FileReader();
 let Parser = new electionParser();
 
 let list = Parser.all(FR.LoadFileIntoArrayByLine('electionSimplified.csv'));
-console.log(list.pobama);
 
 
 
@@ -18,7 +17,7 @@ function sortbyfips(list){
 function percentdifference(p){
     temp=[]
     for(i=0;i<list.length;i++){
-        if(list[i].pobama-list[i].promney>p){
+        if((list[i].pobama-list[i].promney)>p){
             temp.push(list[i])
         }
     }
@@ -45,20 +44,21 @@ function sortbypercentdifference(list){
 
 function sortbyliteraldifference(list){
     list.sort(function(a,b){return (a.obama-a.romney)-(b.obama-b.romney)})
-    return list[0]
+    return list;
 }
 
 function findStatesWithAtLeast(number){
     let countycount = new Array(50);
     let x=0
-    let namesofstates = ["AK", "AL","AR","AZ","CA","CO","CT","DC","DE","FL","GA", "HI", "IA", "ID", "IL", "IN", "KS", "KY", "LA","MA","MD", "ME", "MI", "MN", "MO", "MS", "MT", "NC", "ND", "NE","NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VA", "VT", "WA", "WI", "WV"]
+    let namesofstates = ["AK", "AL","AR","AZ","CA","CO","CT","DC","DE","FL","GA", "HI", "IA", "ID", "IL", "IN", "KS", "KY", "LA","MA","MD", "ME", "MI", "MN", "MO", "MS", "MT", "NC", "ND", "NE","NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VA", "VT", "WA", "WI",]
     countycount.fill(0);
-    for(var i=0;i<list.length;i++){
-        if(!list[i].state==list[i-1].state){
+    for(var i=1;i<list.length;i++){
+        if(list[i].state!==list[i-1].state){
             x++;
         }
         countycount[x]++;
     }
+    console.log(countycount);
     for(var i=0;i<50;i++){
         if(countycount[i]>number){
             return namesofstates[i]
@@ -71,8 +71,8 @@ function findStatesWithAtMost(number){
     let x=0
     let namesofstates = ["AK", "AL","AR","AZ","CA","CO","CT","DC","DE","FL","GA", "HI", "IA", "ID", "IL", "IN", "KS", "KY", "LA","MA","MD", "ME", "MI", "MN", "MO", "MS", "MT", "NC", "ND", "NE","NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VA", "VT", "WA", "WI", "WV"]
     countycount.fill(0);
-    for(var i=0;i<list.length;i++){
-        if(!list[i].state==list[i-1].state){
+    for(var i=1;i<list.length;i++){
+        if(!list[i].state!==list[i-1].state){
             x++;
         }
         countycount[x]++;
@@ -89,8 +89,8 @@ function findStatesWithExact(number){
     let x=0
     let namesofstates = ["AK", "AL","AR","AZ","CA","CO","CT","DC","DE","FL","GA", "HI", "IA", "ID", "IL", "IN", "KS", "KY", "LA","MA","MD", "ME", "MI", "MN", "MO", "MS", "MT", "NC", "ND", "NE","NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VA", "VT", "WA", "WI", "WV"]
     countycount.fill(0);
-    for(var i=0;i<list.length;i++){
-        if(!list[i].state==list[i-1].state){
+    for(var i=1;i<list.length;i++){
+        if(list[i].state!==list[i-1].state){
             x++;
         }
         countycount[x]++;
@@ -104,7 +104,9 @@ function findStatesWithExact(number){
 
 
 
-
+//console.log(percentdifference(25));
+//console.log(sortbyliteraldifference(list));
+findStatesWithAtLeast(20)
 // find states with at least/at most/exactly "number" counties
 // find all state totals aka fips ==0
 // find all states where percent difference was less than p%
